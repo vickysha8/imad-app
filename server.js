@@ -14,15 +14,17 @@ app.get('/article-one',function(req,res){
     res.sendFile(path.join(__dirname, 'ui','article-one.html'));
     });
     
-app.get('/Article-two',function(req,res){
+app.get('/article-one',function(req,res){
     
-    res.send('Article two requested and will be servered here');
+    res.sendFile(path.join(__dirname, 'ui','article-two.html'));
     });
     
-app.get('/Article-three',function(req,res){
     
-    res.send('Article three requested and will be servered here');
-    });    
+app.get('/article-one',function(req,res){
+    
+    res.sendFile(path.join(__dirname, 'ui','article-three.html'));
+    });
+      
     
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
