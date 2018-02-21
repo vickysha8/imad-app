@@ -28,41 +28,45 @@ var articleone={
     
 };
 
-Var htmltemplate= `
-
-<html>
-    <head>
-        <title>
-            ${title}
-        </title>
-
-<link href="/ui/style.css" rel="stylesheet" />
-
-    </head>
+function createtemplate (data){
     
-
-    <body>
+    Var htmltemplate= `
+    
+    <html>
+        <head>
+            <title>
+                ${title}
+            </title>
+    
+    <link href="/ui/style.css" rel="stylesheet" />
+    
+        </head>
         
-        <div class="container">
-            <Div>
-                
-                <a href="/">Home</a>
-            </Div>
-            <hr/>
-            <h3>
-               ${heading}
-            </h3>
-            <div>
-                ${date}
-            </div>
-            <div>
-            ${content}           
-            </div>
-        </div>
-    </body>
     
-</html>
-`;
+        <body>
+            
+            <div class="container">
+                <Div>
+                    
+                    <a href="/">Home</a>
+                </Div>
+                <hr/>
+                <h3>
+                   ${heading}
+                </h3>
+                <div>
+                    ${date}
+                </div>
+                <div>
+                ${content}           
+                </div>
+            </div>
+        </body>
+        
+    </html>
+    `;
+
+}
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
